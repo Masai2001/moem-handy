@@ -100,6 +100,13 @@
 
   /* Services */
   .services{background:var(--bg2)}
+  .rev-list{text-align:left;margin-top:6px}
+  .rev-count{font-weight:800;margin:0 0 4px}
+  .rev-item{border-top:1px solid var(--line);padding:16px 0}
+  .rev-item:first-child{border-top:none}
+  .rev-stars{color:var(--green-d);letter-spacing:2px;font-size:18px}
+  .rev-text{margin:8px 0;font-size:16px}
+  .rev-meta{color:var(--muted);font-size:13px}
   .calc{background:var(--bg2)}
   .calc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;max-width:860px;margin:0 auto}
   .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -692,6 +699,8 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       </div>
       <div class="rev-card">
         <p data-i18n="rev_soon">We are collecting reviews from our recent MOEM HANDY jobs. If we did work for you, tell others how it went.</p>
+        <p class="rev-count" id="revCount" hidden></p>
+        <div class="rev-list" id="revList" hidden></div>
         <div class="rev-btns">
           <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLScnhzv-447dUJbJ0-9r_cwLhKEnKXYxAemc50OoTkNETJzLbw/viewform" target="_blank" rel="noopener" data-i18n="rev_leave">Leave us a review</a>
           <a class="btn btn-dark" href="https://www.facebook.com/MoemHandy" target="_blank" rel="noopener" data-i18n="rev_read">See our work on Facebook</a>
@@ -924,7 +933,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       ok_h:"Your request is ready to send", ok_wa:"Send via WhatsApp", ok_mail:"Send via Email",
       foot_p:"Handyman services in Bradenton, Sarasota and surrounding areas: accent walls, PVC marble panels, TV mounting, painting, kitchen cabinets, furniture assembly and drywall.",
       mb_call:"Call now", mb_quote:"Free quote",
-      nav_reviews:"Reviews", nav_prices:"Prices", calc_h2:"Instant price estimate", calc_p:"Pick a service, answer one or two questions, and see your estimated price right away — no waiting, no obligation.", calc_service:"Service", calc_tv:"TV Mounting", calc_furn:"Furniture Assembly", calc_dry:"Drywall Repair", calc_paint:"Interior Painting", calc_accent:"Accent Wall / Slat Wall", calc_pvc:"PVC Marble Panels", calc_tvsize:"TV size", calc_tv1:"Under 40 inches", calc_tv2:"41 to 60 inches", calc_tv3:"61 inches or more", calc_furnitem:"Furniture item", calc_f0:"Bed frame", calc_f1:"Bookcase", calc_f2:"Dresser", calc_f3:"Desk", calc_f4:"Crib", calc_f5:"TV stand / media center", calc_f6:"Chair", calc_f7:"Sofa", calc_f8:"End table", calc_f9:"Cabinet", calc_f10:"Wardrobe", calc_f11:"Kitchen island", calc_drydamage:"Damage size", calc_d0:"Small hole (up to 4 in)", calc_d1:"Large hole (5 in or more)", calc_d2:"Larger area (by square feet)", calc_sqft:"Area (sq ft)", calc_paintsurface:"Surface", calc_p0:"Interior walls", calc_p1:"Accent wall", calc_p2:"Ceiling", calc_p3:"Kitchen cabinets", calc_wallsize:"Wall size (feet)", calc_hint:"Choose a service to see your estimate.", calc_need:"Enter your measurements to see the estimate.", calc_est:"Estimated range. Your final price is confirmed with your free quote — send photos or measurements.", calc_custom:"Kitchen cabinets are priced by project. Send photos and measurements for your free quote.", calc_cta:"Request my free quote", calc_src:"Estimates use average U.S. prices published by Angi (2026). Your final price is confirmed with your free quote.", hero_reply:"Call or text — we reply the same day.", cta_text:"Text us", t5:"We make it right",
+      nav_reviews:"Reviews", nav_prices:"Prices", calc_h2:"Instant price estimate", calc_p:"Pick a service, answer one or two questions, and see your estimated price right away — no waiting, no obligation.", calc_service:"Service", calc_tv:"TV Mounting", calc_furn:"Furniture Assembly", calc_dry:"Drywall Repair", calc_paint:"Interior Painting", calc_accent:"Accent Wall / Slat Wall", calc_pvc:"PVC Marble Panels", calc_tvsize:"TV size", calc_tv1:"Under 40 inches", calc_tv2:"41 to 60 inches", calc_tv3:"61 inches or more", calc_furnitem:"Furniture item", calc_f0:"Bed frame", calc_f1:"Bookcase", calc_f2:"Dresser", calc_f3:"Desk", calc_f4:"Crib", calc_f5:"TV stand / media center", calc_f6:"Chair", calc_f7:"Sofa", calc_f8:"End table", calc_f9:"Cabinet", calc_f10:"Wardrobe", calc_f11:"Kitchen island", calc_drydamage:"Damage size", calc_d0:"Small hole (up to 4 in)", calc_d1:"Large hole (5 in or more)", calc_d2:"Larger area (by square feet)", calc_sqft:"Area (sq ft)", calc_paintsurface:"Surface", calc_p0:"Interior walls", calc_p1:"Accent wall", calc_p2:"Ceiling", calc_p3:"Kitchen cabinets", calc_wallsize:"Wall size (feet)", calc_hint:"Choose a service to see your estimate.", calc_need:"Enter your measurements to see the estimate.", calc_est:"Estimated range. Your final price is confirmed with your free quote — send photos or measurements.", calc_custom:"Kitchen cabinets are priced by project. Send photos and measurements for your free quote.", calc_cta:"Request my free quote", calc_src:"Estimates use average U.S. prices published by Angi (2026). Your final price is confirmed with your free quote.", rev_count:"{n} reviews from our customers", hero_reply:"Call or text — we reply the same day.", cta_text:"Text us", t5:"We make it right",
       rev_h2:"What our customers say", rev_p:"Only reviews from real MOEM HANDY jobs in Bradenton and Sarasota.",
       rev_read:"See our work on Facebook", rev_leave:"Leave us a review", rev_soon:"We are collecting reviews from our recent MOEM HANDY jobs. If we did work for you, tell others how it went.", s5_price:"TV stand assembly from $120", f_date:"Preferred date", ok_sms:"Send via Text"
     },
@@ -976,7 +985,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       ok_h:"Tu solicitud está lista para enviar", ok_wa:"Enviar por WhatsApp", ok_mail:"Enviar por correo",
       foot_p:"Servicios de handyman en Bradenton, Sarasota y alrededores: paredes de acento, paneles PVC mármol, instalación de TV, pintura, gabinetes de cocina, ensamblaje de muebles y drywall.",
       mb_call:"Llamar ahora", mb_quote:"Cotización gratis",
-      nav_reviews:"Reseñas", nav_prices:"Precios", calc_h2:"Estimación de precio al instante", calc_p:"Escoge un servicio, responde una o dos preguntas y ve tu precio estimado al instante — sin esperar y sin compromiso.", calc_service:"Servicio", calc_tv:"Instalación de TV", calc_furn:"Ensamblaje de muebles", calc_dry:"Reparación de drywall", calc_paint:"Pintura interior", calc_accent:"Pared de acento / Slat wall", calc_pvc:"Paneles de mármol PVC", calc_tvsize:"Tamaño del TV", calc_tv1:"Menos de 40 pulgadas", calc_tv2:"De 41 a 60 pulgadas", calc_tv3:"61 pulgadas o más", calc_furnitem:"Mueble", calc_f0:"Marco de cama", calc_f1:"Librero", calc_f2:"Gavetero", calc_f3:"Escritorio", calc_f4:"Cuna", calc_f5:"Stand de TV / centro de entretenimiento", calc_f6:"Silla", calc_f7:"Sofá", calc_f8:"Mesa auxiliar", calc_f9:"Gabinete", calc_f10:"Armario", calc_f11:"Isla de cocina", calc_drydamage:"Tamaño del daño", calc_d0:"Hueco pequeño (hasta 4 pulg)", calc_d1:"Hueco grande (5 pulg o más)", calc_d2:"Área mayor (por pies cuadrados)", calc_sqft:"Área (pies²)", calc_paintsurface:"Superficie", calc_p0:"Paredes interiores", calc_p1:"Pared de acento", calc_p2:"Techo", calc_p3:"Gabinetes de cocina", calc_wallsize:"Medidas de la pared (pies)", calc_hint:"Escoge un servicio para ver tu estimado.", calc_need:"Escribe las medidas para ver el estimado.", calc_est:"Rango estimado. Tu precio final se confirma con tu cotización gratis — envía fotos o medidas.", calc_custom:"Los gabinetes de cocina se cotizan por proyecto. Envía fotos y medidas para tu cotización gratis.", calc_cta:"Pedir mi cotización gratis", calc_src:"Los estimados usan precios promedio de EE. UU. publicados por Angi (2026). Tu precio final se confirma con tu cotización gratis.", hero_reply:"Llama o escribe — respondemos el mismo día.", cta_text:"Escríbenos", t5:"Lo dejamos bien",
+      nav_reviews:"Reseñas", nav_prices:"Precios", calc_h2:"Estimación de precio al instante", calc_p:"Escoge un servicio, responde una o dos preguntas y ve tu precio estimado al instante — sin esperar y sin compromiso.", calc_service:"Servicio", calc_tv:"Instalación de TV", calc_furn:"Ensamblaje de muebles", calc_dry:"Reparación de drywall", calc_paint:"Pintura interior", calc_accent:"Pared de acento / Slat wall", calc_pvc:"Paneles de mármol PVC", calc_tvsize:"Tamaño del TV", calc_tv1:"Menos de 40 pulgadas", calc_tv2:"De 41 a 60 pulgadas", calc_tv3:"61 pulgadas o más", calc_furnitem:"Mueble", calc_f0:"Marco de cama", calc_f1:"Librero", calc_f2:"Gavetero", calc_f3:"Escritorio", calc_f4:"Cuna", calc_f5:"Stand de TV / centro de entretenimiento", calc_f6:"Silla", calc_f7:"Sofá", calc_f8:"Mesa auxiliar", calc_f9:"Gabinete", calc_f10:"Armario", calc_f11:"Isla de cocina", calc_drydamage:"Tamaño del daño", calc_d0:"Hueco pequeño (hasta 4 pulg)", calc_d1:"Hueco grande (5 pulg o más)", calc_d2:"Área mayor (por pies cuadrados)", calc_sqft:"Área (pies²)", calc_paintsurface:"Superficie", calc_p0:"Paredes interiores", calc_p1:"Pared de acento", calc_p2:"Techo", calc_p3:"Gabinetes de cocina", calc_wallsize:"Medidas de la pared (pies)", calc_hint:"Escoge un servicio para ver tu estimado.", calc_need:"Escribe las medidas para ver el estimado.", calc_est:"Rango estimado. Tu precio final se confirma con tu cotización gratis — envía fotos o medidas.", calc_custom:"Los gabinetes de cocina se cotizan por proyecto. Envía fotos y medidas para tu cotización gratis.", calc_cta:"Pedir mi cotización gratis", calc_src:"Los estimados usan precios promedio de EE. UU. publicados por Angi (2026). Tu precio final se confirma con tu cotización gratis.", rev_count:"{n} reseñas de nuestros clientes", hero_reply:"Llama o escribe — respondemos el mismo día.", cta_text:"Escríbenos", t5:"Lo dejamos bien",
       rev_h2:"Lo que dicen nuestros clientes", rev_p:"Solo reseñas de trabajos reales de MOEM HANDY en Bradenton y Sarasota.",
       rev_read:"Mira nuestro trabajo en Facebook", rev_leave:"Déjanos una reseña", rev_soon:"Estamos recogiendo reseñas de nuestros trabajos recientes de MOEM HANDY. Si hicimos un trabajo para ti, cuéntales a otros cómo te fue.", s5_price:"Ensamblaje de TV stand desde $120", f_date:"Fecha preferida", ok_sms:"Enviar por texto"
     }
@@ -1001,6 +1010,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     document.getElementById("langEs").classList.toggle("on", l === "es");
     refreshTimes();
     if (typeof calc === "function") calc();
+    if (typeof renderReviews === "function") renderReviews();
   }
   /* Relative time for the latest-posts feed ("x hours ago", "yesterday", date) */
   function relLabel(iso){
@@ -1155,6 +1165,52 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     document.getElementById("fName").focus({ preventScroll:true });
   });
   calc();
+  /* ---- Live reviews from the Google Form responses sheet (gviz JSONP) ---- */
+  var REVIEWS = [];
+  function escHtml(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+  function revDate(v){
+    if (v == null) return "";
+    var m = /Date\((\d+),(\d+),(\d+)/.exec(String(v));
+    var d = m ? new Date(+m[1], +m[2], +m[3]) : new Date(v);
+    if (isNaN(d)) return "";
+    return d.toLocaleDateString(lang === "es" ? "es-US" : "en-US", { month:"short", day:"numeric", year:"numeric" });
+  }
+  function renderReviews(){
+    var list = document.getElementById("revList"), count = document.getElementById("revCount"), soon = document.querySelector('[data-i18n="rev_soon"]');
+    if (!list) return;
+    if (!REVIEWS.length){ list.hidden = true; count.hidden = true; if (soon) soon.hidden = false; return; }
+    if (soon) soon.hidden = true;
+    count.hidden = false;
+    count.textContent = I18N[lang].rev_count.replace("{n}", REVIEWS.length);
+    list.hidden = false;
+    list.innerHTML = REVIEWS.map(function(rv){
+      var st = Math.max(1, Math.min(5, +rv.stars || 5));
+      var stars = "★".repeat(st) + "☆".repeat(5 - st);
+      return '<div class="rev-item"><div class="rev-stars" aria-label="' + st + ' / 5">' + stars + '</div><p class="rev-text">' + escHtml(rv.text) + '</p><div class="rev-meta">' + escHtml(rv.name) + (rv.service ? " · " + escHtml(rv.service) : "") + (rv.date ? " · " + escHtml(rv.date) : "") + '</div></div>';
+    }).join("");
+  }
+  window.google = window.google || {};
+  window.google.visualization = window.google.visualization || {};
+  window.google.visualization.Query = window.google.visualization.Query || {};
+  window.google.visualization.Query.setResponse = function(res){
+    try {
+      if (!res || res.status !== "ok" || !res.table || !res.table.rows) return;
+      var labels = res.table.cols.map(function(c){ return (c.label || "").toLowerCase(); });
+      function colIdx(re){ for (var i = 0; i < labels.length; i++){ if (re.test(labels[i])) return i; } return -1; }
+      var iName = colIdx(/name|nombre/), iStars = colIdx(/star|estrella/), iText = colIdx(/review|rese/), iSvc = colIdx(/service|servicio/), iDate = colIdx(/marca|timestamp|fecha/);
+      function val(row, i){ if (i < 0 || !row.c || !row.c[i]) return ""; var v = row.c[i]; return v.f != null ? v.f : (v.v != null ? v.v : ""); }
+      REVIEWS = res.table.rows.map(function(row){
+        return { name: val(row, iName), stars: parseInt(val(row, iStars), 10) || 5, text: val(row, iText), service: val(row, iSvc), date: revDate(val(row, iDate)) };
+      }).filter(function(rv){ return rv.text; }).reverse();
+      renderReviews();
+    } catch (e) { /* keep the fallback message */ }
+  };
+  (function(){
+    var sc = document.createElement("script");
+    sc.src = "https://docs.google.com/spreadsheets/d/14v801tXzsgli2ry7c6vr5sLQVAv-anZdu8wwzYMxcHw/gviz/tq?tqx=out:json&sheet=Respuestas%20de%20formulario%201";
+    sc.onerror = function(){ /* keep the fallback message */ };
+    document.head.appendChild(sc);
+  })();
   ["fName","fPhone","fService"].forEach(function(id){
     document.getElementById(id).addEventListener("input", function(){
       var wrap = this.closest(".field"); if (wrap) wrap.classList.remove("invalid");
