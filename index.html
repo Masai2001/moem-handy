@@ -80,10 +80,18 @@
 
   /* Trust strip */
   .trust{background:var(--green);color:#0b0c07}
-  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:18px;padding-bottom:18px}
+  .trust .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding-top:18px;padding-bottom:18px}
   .trust div{display:flex;gap:10px;align-items:center;font-weight:800;font-size:14.5px}
   .trust svg{flex:none}
   @media(max-width:860px){ .trust .wrap{grid-template-columns:1fr 1fr} }
+  .reply-note{margin:16px 0 0;font-weight:700;color:var(--muted);font-size:15px}
+  .svc .price{font-weight:900;font-size:17px;color:var(--green-d);margin:4px 0 2px}
+  .rev-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;max-width:720px}
+  .rev-score{font-size:46px;font-weight:900;line-height:1}
+  .rev-score small{font-size:22px;color:var(--muted)}
+  .rev-stars{font-size:30px;color:#e8a100;letter-spacing:3px;margin:8px 0 4px}
+  .rev-card p{color:var(--muted);font-size:16px;margin:0}
+  .rev-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 
   section{padding:64px 0}
   .sec-head{max-width:720px;margin-bottom:34px}
@@ -271,6 +279,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       <a href="#latest" data-i18n="nav_latest">Latest posts</a>
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#work" data-i18n="nav_work">All our work</a>
+      <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
       <a href="#quote" data-i18n="nav_quote">Free quote</a>
     </nav>
     <div class="bar-actions">
@@ -299,7 +308,12 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="currentColor"/></svg>
             (941) 718-8730
           </a>
+          <a class="btn btn-white" href="sms:+19417188730">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"/></svg>
+            <span data-i18n="cta_text">Text us</span>
+          </a>
         </div>
+        <p class="reply-note" data-i18n="hero_reply">Call or text — we reply the same day.</p>
         <div class="chips">
           <span data-i18n="chip1">Accent walls</span><span data-i18n="chip2">PVC marble panels</span><span data-i18n="chip3">TV mounting</span><span data-i18n="chip4">Painting</span><span data-i18n="chip5">Kitchen cabinets</span><span data-i18n="chip6">Furniture assembly</span>
         </div>
@@ -318,6 +332,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="t2">Fast scheduling</span></div>
       <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z" stroke="#fff" stroke-width="2"/><circle cx="12" cy="10" r="2.6" stroke="#fff" stroke-width="2"/></svg><span data-i18n="t3">Local: Bradenton &amp; Sarasota</span></div>
       <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="#fff" stroke-width="2"/></svg><span data-i18n="t4">Clean, careful finish</span></div>
+      <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 3 6v6c0 5 4 8.4 9 10 5-1.6 9-5 9-10V6l-9-4Z" stroke="#fff" stroke-width="2"/><path d="m8.5 12 2.4 2.4L15.5 9.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="t5">We make it right</span></div>
     </div>
   </div>
 
@@ -536,6 +551,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
             <h3 data-i18n="s5_t">Furniture Assembly</h3>
             <p data-i18n="s5_p">Beds, dressers, bookshelves, desks, TV stands and patio sets — assembled solid and ready to use.</p>
             <ul><li data-i18n="s5_a">Bedroom &amp; living room furniture</li><li data-i18n="s5_b">TV stands &amp; consoles</li><li data-i18n="s5_c">Patio furniture</li></ul>
+            <p class="price" data-i18n="s5_price">TV stand assembly from $120</p>
             <a class="quote-link" href="#quote" data-service="Furniture Assembly" data-i18n="get_quote">Get a free quote →</a>
           </div>
         </article>
@@ -550,6 +566,25 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
           </div>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="rev_h2">What our customers say</h2>
+        <p data-i18n="rev_p">Real reviews from real jobs in Bradenton and Sarasota.</p>
+      </div>
+      <div class="rev-card">
+        <div class="rev-score">4.7 <small>/ 5</small></div>
+        <div class="rev-stars" aria-label="4.7 out of 5 stars">★★★★★</div>
+        <p data-i18n="rev_based">Based on 7 reviews on Facebook Marketplace</p>
+        <div class="rev-btns">
+          <a class="btn btn-green" href="https://www.facebook.com/MoemHandy" target="_blank" rel="noopener" data-i18n="rev_read">Read reviews on Facebook</a>
+          <a class="btn btn-dark" href="https://www.facebook.com/MoemHandy/reviews" target="_blank" rel="noopener" data-i18n="rev_leave">Leave us a review</a>
+        </div>
       </div>
     </div>
   </section>
@@ -582,7 +617,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
         <div class="steps">
           <div class="step"><span class="n">1</span><div><h3 data-i18n="st1_t">Tell us what you need</h3><p data-i18n="st1_p">Fill out the free quote form, call or message us. Photos of the space help us quote faster.</p></div></div>
           <div class="step"><span class="n">2</span><div><h3 data-i18n="st2_t">Get your free estimate</h3><p data-i18n="st2_p">We review your project and give you a clear price. For design work like accent walls, we can visit in person to measure and quote precisely.</p></div></div>
-          <div class="step"><span class="n">3</span><div><h3 data-i18n="st3_t">We do the job, clean finish</h3><p data-i18n="st3_p">We schedule fast, protect your space, and leave everything installed, leveled and clean.</p></div></div>
+          <div class="step"><span class="n">3</span><div><h3 data-i18n="st3_t">We do the job, clean finish</h3><p data-i18n="st3_p">We schedule fast, protect your space, and leave everything installed, leveled and clean. If something isn't right, we make it right.</p></div></div>
         </div>
       </div>
       <div>
@@ -607,7 +642,11 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
         <div class="contact-lines">
           <a href="tel:+19417188730">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#a9bd5c"/></svg>
-            <span>(941) 718-8730<small data-i18n="q_call">Call or text</small></span>
+            <span>(941) 718-8730<small data-i18n="q_call">Call</small></span>
+          </a>
+          <a href="sms:+19417188730">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#a9bd5c"/></svg>
+            <span>(941) 718-8730<small data-i18n="q_text">Text</small></span>
           </a>
           <a href="mailto:moemhandy@gmail.com">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#a9bd5c" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#a9bd5c" stroke-width="2"/></svg>
@@ -622,7 +661,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
 
       <form class="quote" id="quoteForm" novalidate>
         <h3 data-i18n="f_h3">Free quote form</h3>
-        <p data-i18n="f_p">Fill it out and tap the button: we prepare your message with your reply preference, then you send it to MOEM HANDY by WhatsApp or email.</p>
+        <p data-i18n="f_p">Fill it out and tap the button: we prepare your message with your reply preference, then you send it to MOEM HANDY by text message or email.</p>
         <div class="f-grid">
           <div class="field" id="fw-name">
             <label for="fName"><span data-i18n="f_name">Your name</span> <em>*</em></label>
@@ -652,6 +691,10 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
             <label for="fCity" data-i18n="f_city">City / Area</label>
             <input id="fCity" type="text" autocomplete="address-level2" data-ph-en="e.g. Bradenton" data-ph-es="Ej. Bradenton" placeholder="e.g. Bradenton" />
           </div>
+          <div class="field">
+            <label for="fDate" data-i18n="f_date">Preferred date</label>
+            <input id="fDate" type="date" />
+          </div>
           <div class="field full">
             <label for="fDetails" data-i18n="f_details">Tell us about the job</label>
             <textarea id="fDetails" data-ph-en="What do you want done? Sizes, wall measurements, photos you can send later — anything that helps." data-ph-es="¿Qué quieres hacer? Medidas, tamaño del TV, fotos que puedas enviar — todo ayuda." placeholder="What do you want done? Sizes, wall measurements, photos you can send later — anything that helps."></textarea>
@@ -659,22 +702,23 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
           <div class="field full">
             <label data-i18n="f_pref">How should we reply?</label>
             <div class="pref">
-              <label><input type="radio" name="pref" value="WhatsApp" checked /> WhatsApp</label>
+              <label><input type="radio" name="pref" value="WhatsApp" /> WhatsApp</label>
               <label><input type="radio" name="pref" value="Call" /> <span data-i18n="pref_call">Call</span></label>
-              <label><input type="radio" name="pref" value="Text message" /> <span data-i18n="pref_text">Text</span></label>
+              <label><input type="radio" name="pref" value="Text message" checked /> <span data-i18n="pref_text">Text</span></label>
               <label><input type="radio" name="pref" value="Email" /> Email</label>
             </div>
           </div>
         </div>
         <button class="btn btn-green submit" type="submit" data-i18n="f_submit">Prepare my free quote request</button>
-        <p class="form-note" data-i18n="f_note">Free estimate · No obligation · We reply as soon as we can</p>
+        <p class="form-note" data-i18n="f_note">Free estimate · No obligation · We reply the same day</p>
 
         <div class="success" id="formSuccess" role="status">
           <h4 data-i18n="ok_h">Your request is ready to send</h4>
           <p id="okSummary"></p>
           <div class="row">
-            <a class="btn btn-wa" id="waSend" href="#" target="_blank" rel="noopener" data-i18n="ok_wa">Send via WhatsApp</a>
+            <a class="btn btn-green" id="smsSend" href="#" data-i18n="ok_sms">Send via Text</a>
             <a class="btn btn-dark" id="mailSend" href="#" data-i18n="ok_mail">Send via Email</a>
+            <a class="btn btn-wa" id="waSend" href="#" target="_blank" rel="noopener" data-i18n="ok_wa">Send via WhatsApp</a>
           </div>
         </div>
       </form>
@@ -694,6 +738,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       <a href="#latest" data-i18n="nav_latest">Latest posts</a>
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#work" data-i18n="nav_work">All our work</a>
+      <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
       <a href="#quote" data-i18n="nav_quote">Free quote</a>
       <a href="https://www.instagram.com/moem.handy" target="_blank" rel="noopener">Instagram @moem.handy</a>
       <a href="https://www.facebook.com/MoemHandy" target="_blank" rel="noopener">Facebook — MOEM HANDY</a>
@@ -752,21 +797,24 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       how_h2:"How it works",
       st1_t:"Tell us what you need", st1_p:"Fill out the free quote form, call or message us. Photos of the space help us quote faster.",
       st2_t:"Get your free estimate", st2_p:"We review your project and give you a clear price. For design work like accent walls, we can visit in person to measure and quote precisely.",
-      st3_t:"We do the job, clean finish", st3_p:"We schedule fast, protect your space, and leave everything installed, leveled and clean.",
+      st3_t:"We do the job, clean finish", st3_p:"We schedule fast, protect your space, and leave everything installed, leveled and clean. If something isn't right, we make it right.",
       area_h2:"Service area", area_p:"Based in Bradenton, working across the Sarasota area:", area_more:"& surrounding areas",
       area_note:"Not sure if we cover your area? Ask in the form — if it's nearby, we'll make it work.",
       q_h2:"Request your free quote", q_p:"Tell us about your project. We reply with your free estimate — no obligation, no pressure.",
-      q_call:"Call or text", q_email:"Email us anytime", q_ig:"See more work on Instagram",
-      f_h3:"Free quote form", f_p:"Fill it out and tap the button: we prepare your message with your reply preference, then you send it to MOEM HANDY by WhatsApp or email.",
+      q_call:"Call", q_text:"Text", q_email:"Email us anytime", q_ig:"See more work on Instagram",
+      f_h3:"Free quote form", f_p:"Fill it out and tap the button: we prepare your message with your reply preference, then you send it to MOEM HANDY by text message or email.",
       s4_note:"Fresh color for walls and cabinets",
       f_name:"Your name", f_phone:"Phone", f_service:"Service you need", f_select:"Select a service…", f_other:"Other handyman work",
       f_city:"City / Area", f_details:"Tell us about the job", f_pref:"How should we reply?",
       pref_call:"Call", pref_text:"Text",
-      f_submit:"Prepare my free quote request", f_note:"Free estimate · No obligation · We reply as soon as we can",
+      f_submit:"Prepare my free quote request", f_note:"Free estimate · No obligation · We reply the same day",
       e_name:"Please enter your name.", e_phone:"Please enter a valid phone number.", e_service:"Please choose a service.",
       ok_h:"Your request is ready to send", ok_wa:"Send via WhatsApp", ok_mail:"Send via Email",
       foot_p:"Handyman services in Bradenton, Sarasota and surrounding areas: accent walls, PVC marble panels, TV mounting, painting, kitchen cabinets, furniture assembly and drywall.",
-      mb_call:"Call now", mb_quote:"Free quote"
+      mb_call:"Call now", mb_quote:"Free quote",
+      nav_reviews:"Reviews", hero_reply:"Call or text — we reply the same day.", cta_text:"Text us", t5:"We make it right",
+      rev_h2:"What our customers say", rev_p:"Real reviews from real jobs in Bradenton and Sarasota.", rev_based:"Based on 7 reviews on Facebook Marketplace",
+      rev_read:"Read reviews on Facebook", rev_leave:"Leave us a review", s5_price:"TV stand assembly from $120", f_date:"Preferred date", ok_sms:"Send via Text"
     },
     es: {
       nav_services:"Servicios", nav_work:"Todos los trabajos", nav_latest:"Publicaciones recientes", nav_how:"Cómo funciona", nav_quote:"Cotización gratis",
@@ -801,21 +849,24 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       how_h2:"Cómo funciona",
       st1_t:"Cuéntanos qué necesitas", st1_p:"Llena el formulario gratis, llama o escríbenos. Las fotos del espacio ayudan a cotizar más rápido.",
       st2_t:"Recibe tu cotización gratis", st2_p:"Revisamos tu proyecto y te damos un precio claro. Para diseños como paredes de acento, podemos visitarte en persona para medir y cotizar con precisión.",
-      st3_t:"Hacemos el trabajo, acabado limpio", st3_p:"Agendamos rápido, protegemos tu espacio y dejamos todo instalado, nivelado y limpio.",
+      st3_t:"Hacemos el trabajo, acabado limpio", st3_p:"Agendamos rápido, protegemos tu espacio y dejamos todo instalado, nivelado y limpio. Si algo no queda bien, lo arreglamos.",
       area_h2:"Zona de servicio", area_p:"Base en Bradenton, trabajando en toda la zona de Sarasota:", area_more:"y alrededores",
       area_note:"¿No sabes si cubrimos tu zona? Pregunta en el formulario — si queda cerca, lo resolvemos.",
       q_h2:"Pide tu cotización gratis", q_p:"Cuéntanos de tu proyecto. Te respondemos con tu cotización gratis — sin compromiso y sin presión.",
-      q_call:"Llamada o texto", q_email:"Escríbenos cuando quieras", q_ig:"Mira más trabajos en Instagram",
-      f_h3:"Formulario de cotización gratis", f_p:"Llénalo y toca el botón: preparamos tu mensaje con tu preferencia de respuesta, y luego lo envías a MOEM HANDY por WhatsApp o correo.",
+      q_call:"Llamada", q_text:"Texto", q_email:"Escríbenos cuando quieras", q_ig:"Mira más trabajos en Instagram",
+      f_h3:"Formulario de cotización gratis", f_p:"Llénalo y toca el botón: preparamos tu mensaje con tu preferencia de respuesta, y luego lo envías a MOEM HANDY por mensaje de texto o correo.",
       s4_note:"Color nuevo para paredes y gabinetes",
       f_name:"Tu nombre", f_phone:"Teléfono", f_service:"Servicio que necesitas", f_select:"Selecciona un servicio…", f_other:"Otro trabajo de handyman",
       f_city:"Ciudad / Zona", f_details:"Cuéntanos del trabajo", f_pref:"¿Cómo te respondemos?",
       pref_call:"Llamada", pref_text:"Texto",
-      f_submit:"Preparar mi solicitud de cotización", f_note:"Cotización gratis · Sin compromiso · Respondemos lo antes posible",
+      f_submit:"Preparar mi solicitud de cotización", f_note:"Cotización gratis · Sin compromiso · Respondemos el mismo día",
       e_name:"Escribe tu nombre.", e_phone:"Escribe un teléfono válido.", e_service:"Escoge un servicio.",
       ok_h:"Tu solicitud está lista para enviar", ok_wa:"Enviar por WhatsApp", ok_mail:"Enviar por correo",
       foot_p:"Servicios de handyman en Bradenton, Sarasota y alrededores: paredes de acento, paneles PVC mármol, instalación de TV, pintura, gabinetes de cocina, ensamblaje de muebles y drywall.",
-      mb_call:"Llamar ahora", mb_quote:"Cotización gratis"
+      mb_call:"Llamar ahora", mb_quote:"Cotización gratis",
+      nav_reviews:"Reseñas", hero_reply:"Llama o escribe — respondemos el mismo día.", cta_text:"Escríbenos", t5:"Lo dejamos bien",
+      rev_h2:"Lo que dicen nuestros clientes", rev_p:"Reseñas reales de trabajos reales en Bradenton y Sarasota.", rev_based:"Basado en 7 reseñas en Facebook Marketplace",
+      rev_read:"Leer reseñas en Facebook", rev_leave:"Déjanos una reseña", s5_price:"Ensamblaje de TV stand desde $120", f_date:"Fecha preferida", ok_sms:"Enviar por texto"
     }
   };
   var lang = "en";
@@ -902,7 +953,8 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     var service = sel.value || sel.options[sel.selectedIndex].text;
     var city = document.getElementById("fCity").value.trim();
     var details = document.getElementById("fDetails").value.trim();
-    var pref = (form.querySelector('input[name="pref"]:checked') || {}).value || "WhatsApp";
+    var date = document.getElementById("fDate").value;
+    var pref = (form.querySelector('input[name="pref"]:checked') || {}).value || "Text message";
     var ok = true;
     ok = setInvalid("fw-name", !name) && ok;
     ok = setInvalid("fw-phone", phone.replace(/\D/g,"").length < 7) && ok;
@@ -917,9 +969,11 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     ];
     if (city) lines.push("City/Area: " + city);
     if (details) lines.push("About the job: " + details);
+    if (date) lines.push("Preferred date: " + date);
     lines.push("Reply by: " + pref);
     var msg = lines.join("\n");
 
+    document.getElementById("smsSend").href = "sms:+19417188730?&body=" + encodeURIComponent(msg);
     document.getElementById("waSend").href = "https://wa.me/19417188730?text=" + encodeURIComponent(msg);
     document.getElementById("mailSend").href = "mailto:moemhandy@gmail.com?subject=" + encodeURIComponent("Free quote request — " + service + " — " + name) + "&body=" + encodeURIComponent(msg);
     var sum = document.getElementById("okSummary");
