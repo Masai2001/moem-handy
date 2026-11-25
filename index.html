@@ -100,6 +100,20 @@
 
   /* Services */
   .services{background:var(--bg2)}
+  .calc{background:var(--bg2)}
+  .calc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;max-width:860px;margin:0 auto}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .calc-grid .field{display:flex;flex-direction:column;gap:7px}
+  .calc-grid label{font-weight:800;font-size:14px}
+  .calc-grid select,.calc-grid input{font:inherit;padding:12px 14px;border:1.5px solid #d5d5d5;border-radius:10px;background:#fff;color:#111;min-height:46px}
+  .calc-grid .wh{display:flex;gap:8px;align-items:center}
+  .calc-grid .wh input{flex:1;min-width:0}
+  .calc-out{margin-top:20px;background:var(--green-soft);border:1.5px solid var(--green-d);border-radius:14px;padding:20px;text-align:center}
+  .calc-range{font-family:"Archivo";font-weight:900;font-size:clamp(30px,4vw,42px);color:var(--green-d)}
+  .calc-out p{color:var(--muted);margin:8px 0 0;font-size:15px}
+  .calc-actions{margin-top:16px;text-align:center}
+  .calc-src{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+  @media(max-width:600px){ .calc-grid{grid-template-columns:1fr} .calc-card{padding:20px} }
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:960px){ .svc-grid{grid-template-columns:1fr 1fr} }
   @media(max-width:600px){ .svc-grid{grid-template-columns:1fr} }
@@ -278,6 +292,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     <nav class="main">
       <a href="#latest" data-i18n="nav_latest">Latest posts</a>
       <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#calculator" data-i18n="nav_prices">Prices</a>
       <a href="#work" data-i18n="nav_work">All our work</a>
       <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
       <a href="#quote" data-i18n="nav_quote">Free quote</a>
@@ -570,6 +585,104 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <!-- PRICE CALCULATOR -->
+  <section class="calc" id="calculator">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="calc_h2">Instant price estimate</h2>
+        <p data-i18n="calc_p">Pick a service, answer one or two questions, and see your estimated price right away — no waiting, no obligation.</p>
+      </div>
+      <div class="calc-card">
+        <div class="calc-grid">
+          <div class="field">
+            <label for="cService" data-i18n="calc_service">Service</label>
+            <select id="cService">
+              <option value="tv" data-i18n="calc_tv">TV Mounting</option>
+              <option value="furniture" data-i18n="calc_furn">Furniture Assembly</option>
+              <option value="drywall" data-i18n="calc_dry">Drywall Repair</option>
+              <option value="paint" data-i18n="calc_paint">Interior Painting</option>
+              <option value="accent" data-i18n="calc_accent">Accent Wall / Slat Wall</option>
+              <option value="pvc" data-i18n="calc_pvc">PVC Marble Panels</option>
+            </select>
+          </div>
+          <div class="field" id="cg-tv">
+            <label for="cTvSize" data-i18n="calc_tvsize">TV size</label>
+            <select id="cTvSize">
+              <option value="0" data-i18n="calc_tv1">Under 40 inches</option>
+              <option value="1" data-i18n="calc_tv2">41 to 60 inches</option>
+              <option value="2" data-i18n="calc_tv3">61 inches or more</option>
+            </select>
+          </div>
+          <div class="field" id="cg-furniture" hidden>
+            <label for="cFurnItem" data-i18n="calc_furnitem">Furniture item</label>
+            <select id="cFurnItem">
+              <option value="0" data-i18n="calc_f0">Bed frame</option>
+              <option value="1" data-i18n="calc_f1">Bookcase</option>
+              <option value="2" data-i18n="calc_f2">Dresser</option>
+              <option value="3" data-i18n="calc_f3">Desk</option>
+              <option value="4" data-i18n="calc_f4">Crib</option>
+              <option value="5" data-i18n="calc_f5">TV stand / media center</option>
+              <option value="6" data-i18n="calc_f6">Chair</option>
+              <option value="7" data-i18n="calc_f7">Sofa</option>
+              <option value="8" data-i18n="calc_f8">End table</option>
+              <option value="9" data-i18n="calc_f9">Cabinet</option>
+              <option value="10" data-i18n="calc_f10">Wardrobe</option>
+              <option value="11" data-i18n="calc_f11">Kitchen island</option>
+            </select>
+          </div>
+          <div class="field" id="cg-drywall" hidden>
+            <label for="cDryDamage" data-i18n="calc_drydamage">Damage size</label>
+            <select id="cDryDamage">
+              <option value="0" data-i18n="calc_d0">Small hole (up to 4 in)</option>
+              <option value="1" data-i18n="calc_d1">Large hole (5 in or more)</option>
+              <option value="2" data-i18n="calc_d2">Larger area (by square feet)</option>
+            </select>
+          </div>
+          <div class="field" id="cg-drywall-sqft" hidden>
+            <label for="cDrySqft" data-i18n="calc_sqft">Area (sq ft)</label>
+            <input id="cDrySqft" type="number" min="1" max="500" inputmode="decimal" data-ph-en="e.g. 10" data-ph-es="ej. 10" placeholder="e.g. 10" />
+          </div>
+          <div class="field" id="cg-paint" hidden>
+            <label for="cPaintSurface" data-i18n="calc_paintsurface">Surface</label>
+            <select id="cPaintSurface">
+              <option value="0" data-i18n="calc_p0">Interior walls</option>
+              <option value="1" data-i18n="calc_p1">Accent wall</option>
+              <option value="2" data-i18n="calc_p2">Ceiling</option>
+              <option value="3" data-i18n="calc_p3">Kitchen cabinets</option>
+            </select>
+          </div>
+          <div class="field" id="cg-paint-sqft" hidden>
+            <label for="cPaintSqft" data-i18n="calc_sqft">Area (sq ft)</label>
+            <input id="cPaintSqft" type="number" min="1" max="10000" inputmode="decimal" data-ph-en="e.g. 120" data-ph-es="ej. 120" placeholder="e.g. 120" />
+          </div>
+          <div class="field" id="cg-accent" hidden>
+            <label data-i18n="calc_wallsize">Wall size (feet)</label>
+            <div class="wh">
+              <input id="cWallW" type="number" min="1" max="100" inputmode="decimal" data-ph-en="Width" data-ph-es="Ancho" placeholder="Width" aria-label="Width in feet" />
+              <span aria-hidden="true">×</span>
+              <input id="cWallH" type="number" min="1" max="30" inputmode="decimal" data-ph-en="Height" data-ph-es="Alto" placeholder="Height" aria-label="Height in feet" />
+            </div>
+          </div>
+          <div class="field" id="cg-pvc" hidden>
+            <label data-i18n="calc_wallsize">Wall size (feet)</label>
+            <div class="wh">
+              <input id="cPvcW" type="number" min="1" max="100" inputmode="decimal" data-ph-en="Width" data-ph-es="Ancho" placeholder="Width" aria-label="Width in feet" />
+              <span aria-hidden="true">×</span>
+              <input id="cPvcH" type="number" min="1" max="30" inputmode="decimal" data-ph-en="Height" data-ph-es="Alto" placeholder="Height" aria-label="Height in feet" />
+            </div>
+          </div>
+        </div>
+        <div class="calc-out" role="status">
+          <div class="calc-range" id="calcRange">—</div>
+          <p id="calcNote">Choose a service to see your estimate.</p>
+        </div>
+        <div class="calc-actions">
+          <button class="btn btn-green" type="button" id="calcQuote" data-i18n="calc_cta">Request my free quote</button>
+        </div>
+        <p class="calc-src" data-i18n="calc_src">Estimates use average U.S. prices published by Angi (2026). Your final price is confirmed with your free quote.</p>
+      </div>
+    </div>
+  </section>
   <!-- REVIEWS -->
   <section class="reviews" id="reviews">
     <div class="wrap">
@@ -580,7 +693,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       <div class="rev-card">
         <p data-i18n="rev_soon">We are collecting reviews from our recent MOEM HANDY jobs. If we did work for you, tell others how it went.</p>
         <div class="rev-btns">
-          <a class="btn btn-green" href="https://www.facebook.com/MoemHandy/reviews" target="_blank" rel="noopener" data-i18n="rev_leave">Leave us a review</a>
+          <a class="btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLScnhzv-447dUJbJ0-9r_cwLhKEnKXYxAemc50OoTkNETJzLbw/viewform" target="_blank" rel="noopener" data-i18n="rev_leave">Leave us a review</a>
           <a class="btn btn-dark" href="https://www.facebook.com/MoemHandy" target="_blank" rel="noopener" data-i18n="rev_read">See our work on Facebook</a>
         </div>
       </div>
@@ -735,6 +848,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     <nav>
       <a href="#latest" data-i18n="nav_latest">Latest posts</a>
       <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#calculator" data-i18n="nav_prices">Prices</a>
       <a href="#work" data-i18n="nav_work">All our work</a>
       <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
       <a href="#quote" data-i18n="nav_quote">Free quote</a>
@@ -810,7 +924,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       ok_h:"Your request is ready to send", ok_wa:"Send via WhatsApp", ok_mail:"Send via Email",
       foot_p:"Handyman services in Bradenton, Sarasota and surrounding areas: accent walls, PVC marble panels, TV mounting, painting, kitchen cabinets, furniture assembly and drywall.",
       mb_call:"Call now", mb_quote:"Free quote",
-      nav_reviews:"Reviews", hero_reply:"Call or text — we reply the same day.", cta_text:"Text us", t5:"We make it right",
+      nav_reviews:"Reviews", nav_prices:"Prices", calc_h2:"Instant price estimate", calc_p:"Pick a service, answer one or two questions, and see your estimated price right away — no waiting, no obligation.", calc_service:"Service", calc_tv:"TV Mounting", calc_furn:"Furniture Assembly", calc_dry:"Drywall Repair", calc_paint:"Interior Painting", calc_accent:"Accent Wall / Slat Wall", calc_pvc:"PVC Marble Panels", calc_tvsize:"TV size", calc_tv1:"Under 40 inches", calc_tv2:"41 to 60 inches", calc_tv3:"61 inches or more", calc_furnitem:"Furniture item", calc_f0:"Bed frame", calc_f1:"Bookcase", calc_f2:"Dresser", calc_f3:"Desk", calc_f4:"Crib", calc_f5:"TV stand / media center", calc_f6:"Chair", calc_f7:"Sofa", calc_f8:"End table", calc_f9:"Cabinet", calc_f10:"Wardrobe", calc_f11:"Kitchen island", calc_drydamage:"Damage size", calc_d0:"Small hole (up to 4 in)", calc_d1:"Large hole (5 in or more)", calc_d2:"Larger area (by square feet)", calc_sqft:"Area (sq ft)", calc_paintsurface:"Surface", calc_p0:"Interior walls", calc_p1:"Accent wall", calc_p2:"Ceiling", calc_p3:"Kitchen cabinets", calc_wallsize:"Wall size (feet)", calc_hint:"Choose a service to see your estimate.", calc_need:"Enter your measurements to see the estimate.", calc_est:"Estimated range. Your final price is confirmed with your free quote — send photos or measurements.", calc_custom:"Kitchen cabinets are priced by project. Send photos and measurements for your free quote.", calc_cta:"Request my free quote", calc_src:"Estimates use average U.S. prices published by Angi (2026). Your final price is confirmed with your free quote.", hero_reply:"Call or text — we reply the same day.", cta_text:"Text us", t5:"We make it right",
       rev_h2:"What our customers say", rev_p:"Only reviews from real MOEM HANDY jobs in Bradenton and Sarasota.",
       rev_read:"See our work on Facebook", rev_leave:"Leave us a review", rev_soon:"We are collecting reviews from our recent MOEM HANDY jobs. If we did work for you, tell others how it went.", s5_price:"TV stand assembly from $120", f_date:"Preferred date", ok_sms:"Send via Text"
     },
@@ -862,7 +976,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
       ok_h:"Tu solicitud está lista para enviar", ok_wa:"Enviar por WhatsApp", ok_mail:"Enviar por correo",
       foot_p:"Servicios de handyman en Bradenton, Sarasota y alrededores: paredes de acento, paneles PVC mármol, instalación de TV, pintura, gabinetes de cocina, ensamblaje de muebles y drywall.",
       mb_call:"Llamar ahora", mb_quote:"Cotización gratis",
-      nav_reviews:"Reseñas", hero_reply:"Llama o escribe — respondemos el mismo día.", cta_text:"Escríbenos", t5:"Lo dejamos bien",
+      nav_reviews:"Reseñas", nav_prices:"Precios", calc_h2:"Estimación de precio al instante", calc_p:"Escoge un servicio, responde una o dos preguntas y ve tu precio estimado al instante — sin esperar y sin compromiso.", calc_service:"Servicio", calc_tv:"Instalación de TV", calc_furn:"Ensamblaje de muebles", calc_dry:"Reparación de drywall", calc_paint:"Pintura interior", calc_accent:"Pared de acento / Slat wall", calc_pvc:"Paneles de mármol PVC", calc_tvsize:"Tamaño del TV", calc_tv1:"Menos de 40 pulgadas", calc_tv2:"De 41 a 60 pulgadas", calc_tv3:"61 pulgadas o más", calc_furnitem:"Mueble", calc_f0:"Marco de cama", calc_f1:"Librero", calc_f2:"Gavetero", calc_f3:"Escritorio", calc_f4:"Cuna", calc_f5:"Stand de TV / centro de entretenimiento", calc_f6:"Silla", calc_f7:"Sofá", calc_f8:"Mesa auxiliar", calc_f9:"Gabinete", calc_f10:"Armario", calc_f11:"Isla de cocina", calc_drydamage:"Tamaño del daño", calc_d0:"Hueco pequeño (hasta 4 pulg)", calc_d1:"Hueco grande (5 pulg o más)", calc_d2:"Área mayor (por pies cuadrados)", calc_sqft:"Área (pies²)", calc_paintsurface:"Superficie", calc_p0:"Paredes interiores", calc_p1:"Pared de acento", calc_p2:"Techo", calc_p3:"Gabinetes de cocina", calc_wallsize:"Medidas de la pared (pies)", calc_hint:"Escoge un servicio para ver tu estimado.", calc_need:"Escribe las medidas para ver el estimado.", calc_est:"Rango estimado. Tu precio final se confirma con tu cotización gratis — envía fotos o medidas.", calc_custom:"Los gabinetes de cocina se cotizan por proyecto. Envía fotos y medidas para tu cotización gratis.", calc_cta:"Pedir mi cotización gratis", calc_src:"Los estimados usan precios promedio de EE. UU. publicados por Angi (2026). Tu precio final se confirma con tu cotización gratis.", hero_reply:"Llama o escribe — respondemos el mismo día.", cta_text:"Escríbenos", t5:"Lo dejamos bien",
       rev_h2:"Lo que dicen nuestros clientes", rev_p:"Solo reseñas de trabajos reales de MOEM HANDY en Bradenton y Sarasota.",
       rev_read:"Mira nuestro trabajo en Facebook", rev_leave:"Déjanos una reseña", rev_soon:"Estamos recogiendo reseñas de nuestros trabajos recientes de MOEM HANDY. Si hicimos un trabajo para ti, cuéntales a otros cómo te fue.", s5_price:"Ensamblaje de TV stand desde $120", f_date:"Fecha preferida", ok_sms:"Enviar por texto"
     }
@@ -886,6 +1000,7 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     document.getElementById("langEn").classList.toggle("on", l === "en");
     document.getElementById("langEs").classList.toggle("on", l === "es");
     refreshTimes();
+    if (typeof calc === "function") calc();
   }
   /* Relative time for the latest-posts feed ("x hours ago", "yesterday", date) */
   function relLabel(iso){
@@ -982,6 +1097,64 @@ src="https://www.facebook.com/tr?id=1686732819713281&ev=PageView&noscript=1"
     box.classList.add("show");
     box.scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
+  /* ---- Price calculator (Angi 2026 average U.S. prices, approved by Masai) ---- */
+  var PRICES = {
+    tv: [[120,200],[180,300],[250,600]],
+    furniture: [[70,160],[80,120],[100,350],[100,300],[100,250],[100,350],[40,160],[80,160],[40,100],[100,450],[150,450],[150,450]],
+    drywall: [[20,120],[50,200]],
+    paint: [[1,2],[2,6],[1,3]],
+    accent: [15,45],
+    pvc: [7,25]
+  };
+  var CALC_QUOTE_SERVICE = { tv:"TV Mounting", furniture:"Furniture Assembly", drywall:"Drywall / Repairs", paint:"Painting / Kitchen Cabinets", accent:"Accent Wall / Fine Wood", pvc:"PVC Marble Panels" };
+  function calcShow(id, on){ var el = document.getElementById(id); if (el) el.hidden = !on; }
+  function calcMoney(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+  function calc(){
+    var svc = document.getElementById("cService").value, lo = null, hi = null, custom = false;
+    calcShow("cg-tv", svc === "tv");
+    calcShow("cg-furniture", svc === "furniture");
+    calcShow("cg-drywall", svc === "drywall");
+    calcShow("cg-paint", svc === "paint");
+    calcShow("cg-accent", svc === "accent");
+    calcShow("cg-pvc", svc === "pvc");
+    if (svc === "tv"){ var r = PRICES.tv[+document.getElementById("cTvSize").value]; lo = r[0]; hi = r[1]; }
+    else if (svc === "furniture"){ var r2 = PRICES.furniture[+document.getElementById("cFurnItem").value]; lo = r2[0]; hi = r2[1]; }
+    else if (svc === "drywall"){
+      var d = +document.getElementById("cDryDamage").value;
+      calcShow("cg-drywall-sqft", d === 2);
+      if (d < 2){ var r3 = PRICES.drywall[d]; lo = r3[0]; hi = r3[1]; }
+      else { var sq = parseFloat(document.getElementById("cDrySqft").value); if (sq > 0){ lo = 50 * sq; hi = 75 * sq; } }
+    }
+    else if (svc === "paint"){
+      var p = +document.getElementById("cPaintSurface").value;
+      calcShow("cg-paint-sqft", p !== 3);
+      if (p === 3){ custom = true; }
+      else { var sq2 = parseFloat(document.getElementById("cPaintSqft").value); if (sq2 > 0){ var r4 = PRICES.paint[p]; lo = r4[0] * sq2; hi = r4[1] * sq2; } }
+    }
+    else if (svc === "accent"){
+      var w = parseFloat(document.getElementById("cWallW").value), h = parseFloat(document.getElementById("cWallH").value);
+      if (w > 0 && h > 0){ lo = 15 * w * h; hi = 45 * w * h; }
+    }
+    else if (svc === "pvc"){
+      var w2 = parseFloat(document.getElementById("cPvcW").value), h2 = parseFloat(document.getElementById("cPvcH").value);
+      if (w2 > 0 && h2 > 0){ lo = 7 * w2 * h2; hi = 25 * w2 * h2; }
+    }
+    var dict = I18N[lang], range = document.getElementById("calcRange"), note = document.getElementById("calcNote");
+    if (custom){ range.textContent = "—"; note.textContent = dict.calc_custom; }
+    else if (lo === null){ range.textContent = "—"; note.textContent = dict.calc_need; }
+    else { range.textContent = calcMoney(lo) + " – " + calcMoney(hi); note.textContent = dict.calc_est; }
+  }
+  ["cService","cTvSize","cFurnItem","cDryDamage","cDrySqft","cPaintSurface","cPaintSqft","cWallW","cWallH","cPvcW","cPvcH"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calc);
+    document.getElementById(id).addEventListener("change", calc);
+  });
+  document.getElementById("calcQuote").addEventListener("click", function(){
+    var sel = document.getElementById("fService");
+    sel.value = CALC_QUOTE_SERVICE[document.getElementById("cService").value];
+    document.getElementById("quote").scrollIntoView({ behavior:"smooth" });
+    document.getElementById("fName").focus({ preventScroll:true });
+  });
+  calc();
   ["fName","fPhone","fService"].forEach(function(id){
     document.getElementById(id).addEventListener("input", function(){
       var wrap = this.closest(".field"); if (wrap) wrap.classList.remove("invalid");
