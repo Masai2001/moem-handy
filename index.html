@@ -151,6 +151,19 @@
   figure.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;font-weight:800;font-size:15px}
   figure.work figcaption small{display:block;font-weight:600;color:#d5ded5;font-size:13px}
 
+  /* Regal Matisse area */
+  .regal{background:var(--bg)}
+  .rm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:960px){ .rm-grid{grid-template-columns:repeat(3,1fr)} }
+  @media(max-width:640px){ .rm-grid{grid-template-columns:1fr 1fr} }
+  a.rm-item{display:block;border-radius:10px;overflow:hidden;position:relative;border:1px solid var(--line)}
+  a.rm-item img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .35s}
+  a.rm-item:hover img{transform:scale(1.05)}
+  a.rm-item .rm-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.68);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.02em}
+  .rm-vid{display:block;border-radius:10px;overflow:hidden;position:relative;border:1px solid var(--line);background:#000}
+  .rm-vid video{width:100%;height:210px;object-fit:cover;display:block}
+  .rm-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+
   /* Latest feed — same posts as the social accounts, newest first */
   .feed-sec{background:var(--bg)}
   .feed-head{display:flex;gap:26px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:30px}
@@ -736,6 +749,66 @@ input,select,textarea{border-radius:12px}
     </div>
   </section>
 
+
+  <!-- REGAL MATISSE -->
+  <section class="regal" id="regal">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="rm_h2">Regal Matisse — PVC &amp; Marble Panels</h2>
+        <p data-i18n="rm_p">Our own panel showroom in Sarasota. Regal Matisse sells the PVC and marble panels — MOEM HANDY designs and installs them.</p>
+      </div>
+      <p style="color:var(--muted);max-width:780px;margin:-4px 0 18px" data-i18n="rm_body">Every photo and video below comes from the Regal Matisse showroom at 1184 Whitfield Ave, Sarasota — the same panels we install in homes across Bradenton, Sarasota and surrounding areas. Play the videos right here, tap any photo to see it on Instagram, pick the look you like, and ask us for a free installation quote.</p>
+      <div class="rm-grid">
+        <a class="rm-item" href="https://www.instagram.com/p/DVXTmZ_APqw/" target="_blank" rel="noopener"><img src="/img-2346aa5657.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DVLxTFJgIkI/" target="_blank" rel="noopener"><img src="/img-c052af027b.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DVLxTFJgIkI/" target="_blank" rel="noopener"><img src="/img-928b9e41c5.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DVJ57JtD1es/" target="_blank" rel="noopener"><img src="/img-acadff5d30.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DVJ57JtD1es/" target="_blank" rel="noopener"><img src="/img-c017e2ca4e.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DUZZ8LWgNyP/" target="_blank" rel="noopener"><img src="/img-95687a98d8.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DUZZ8LWgNyP/" target="_blank" rel="noopener"><img src="/img-d3bf13a5fc.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DUJlOgvjzBL/" target="_blank" rel="noopener"><img src="/img-b9272a3b01.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DUJlOgvjzBL/" target="_blank" rel="noopener"><img src="/img-15c71f6687.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DTT0PAngMx6/" target="_blank" rel="noopener"><img src="/img-bb8ef5d639.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DRIn6KKADMk/" target="_blank" rel="noopener"><img src="/img-1c8a0d450c.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DQ5NvjlgF4S/" target="_blank" rel="noopener"><img src="/img-d96cb3ef3d.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DMtnWIRslsk/" target="_blank" rel="noopener"><img src="/img-62b491ac8b.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DMtnWIRslsk/" target="_blank" rel="noopener"><img src="/img-98ecf6ec74.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DLiaYKAPDQS/" target="_blank" rel="noopener"><img src="/img-02896dcb33.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DIPxuXYPUmf/" target="_blank" rel="noopener"><img src="/img-db7211d0b7.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DIHxXT_vqkm/" target="_blank" rel="noopener"><img src="/img-0e46ec2ca9.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DHsEzr9thz7/" target="_blank" rel="noopener"><img src="/img-ec93e3f5f9.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DHsEzr9thz7/" target="_blank" rel="noopener"><img src="/img-3cb8ebea28.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DHmthcztCj7/" target="_blank" rel="noopener"><img src="/img-34ac28a911.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DHhpMf0tjx1/" target="_blank" rel="noopener"><img src="/img-b26aaae046.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DHU6THetnfZ/" target="_blank" rel="noopener"><img src="/img-b793ab5bbb.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DG69Wd1NxD2/" target="_blank" rel="noopener"><img src="/img-854969af12.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DGzB8soNyJU/" target="_blank" rel="noopener"><img src="/img-4ecd77a593.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <a class="rm-item" href="https://www.instagram.com/p/DGzB8soNyJU/" target="_blank" rel="noopener"><img src="/img-e4ea3ba154.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-b9b4c25a61.jpg" src="/vid-93d53911fe.mp4"></video></div>
+        <a class="rm-item" href="https://www.instagram.com/reel/DW2mbIhjGt5/" target="_blank" rel="noopener"><img src="/img-de4c80aac3.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-5debd97d0c.jpg" src="/vid-089be9ff5c.mp4"></video></div>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-73500b3d85.jpg" src="/vid-d912ab50c3.mp4"></video></div>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-23573b4ff4.jpg" src="/vid-7d90a43558.mp4"></video></div>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-828f73cf81.jpg" src="/vid-11371d4f13.mp4"></video></div>
+        <a class="rm-item" href="https://www.instagram.com/reel/DNmCj0yAZD4/" target="_blank" rel="noopener"><img src="/img-3207a1d9a0.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-8fb657d82e.jpg" src="/vid-27eaab5757.mp4"></video></div>
+        <a class="rm-item" href="https://www.instagram.com/reel/DNdr3OdgitB/" target="_blank" rel="noopener"><img src="/img-dc28a63d78.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <a class="rm-item" href="https://www.instagram.com/reel/DNWap6pPjip/" target="_blank" rel="noopener"><img src="/img-e8d8633975.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-a5205b4233.jpg" src="/vid-d1d570d81a.mp4"></video></div>
+        <a class="rm-item" href="https://www.instagram.com/reel/DM34ctusv9E/" target="_blank" rel="noopener"><img src="/img-9d1b3b5766.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <a class="rm-item" href="https://www.instagram.com/reel/DMyupP9MkHE/" target="_blank" rel="noopener"><img src="/img-abf87c7301.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <a class="rm-item" href="https://www.instagram.com/reel/DMgn8qXsmpB/" target="_blank" rel="noopener"><img src="/img-39cbbd146d.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-8f5594b0ef.jpg" src="/vid-a044b0b4e6.mp4"></video></div>
+        <a class="rm-item" href="https://www.instagram.com/reel/DMTIVDfAOZ6/" target="_blank" rel="noopener"><img src="/img-f81198e0d3.jpg" alt="Regal Matisse PVC and marble panel design — panel sales by Regal Matisse, installation by MOEM HANDY" loading="lazy" /><span class="rm-badge" data-i18n="rm_video">Video</span></a>
+        <div class="rm-vid"><video controls preload="none" playsinline poster="/img-21bed06d82.jpg" src="/vid-81f7fb4a2b.mp4"></video></div>
+      </div>
+      <div class="rm-cta">
+        <a class="btn btn-dark" href="https://www.instagram.com/regalmatisse/" target="_blank" rel="noopener" data-i18n="rm_ig">Follow @regalmatisse</a>
+        <a class="btn btn-green" href="#quote" data-service="PVC Marble Panels" data-i18n="get_quote">Get a free quote →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICE CALCULATOR -->
   <section class="calc" id="calculator">
     <div class="wrap">
@@ -1041,6 +1114,7 @@ input,select,textarea{border-radius:12px}
       chip1:"Accent walls", chip2:"PVC marble panels", chip3:"TV mounting", chip4:"Painting", chip5:"Kitchen cabinets", chip6:"Furniture assembly",
       t1:"Free estimates", t2:"Fast scheduling", t3:"Local: Bradenton & Sarasota", t4:"Clean, careful finish",
       svc_h2:"Our services", svc_p:"The work we do every week in Bradenton, Sarasota and surrounding areas. Pick a service and ask for your free quote.",
+      rm_h2:"Regal Matisse — PVC & Marble Panels", rm_p:"Our own panel showroom in Sarasota. Regal Matisse sells the PVC and marble panels — MOEM HANDY designs and installs them.", rm_body:"Every photo and video below comes from the Regal Matisse showroom at 1184 Whitfield Ave, Sarasota — the same panels we install in homes across Bradenton, Sarasota and surrounding areas. Play the videos right here, tap any photo to see it on Instagram, pick the look you like, and ask us for a free installation quote.", rm_ig:"Follow @regalmatisse", rm_video:"Video",
       s1_t:"Accent Walls & Fine Wood", s1_p:"Slat wood walls and custom accent designs that change the whole look of your living room or bedroom.", s1_a:"Wood slat panels", s1_b:"TV feature walls", s1_c:"LED lighting accents",
       s2_t:"PVC Marble Panels", s2_p:"Marble-look PVC panel installation for walls and kitchen islands — elegant finish, easy to clean.", s2_a:"Living room walls", s2_b:"Kitchen islands", s2_c:"Combined with slat panels",
       s3_t:"TV Mounting", s3_p:"Secure wall mounting for TVs of any size, leveled and centered. Soundbars and consoles too.", s3_price:"From $120", s3_a:'Any size, including 85"–100"', s3_b:"On slat and accent walls", s3_c:"Soundbar installation",
@@ -1095,6 +1169,7 @@ input,select,textarea{border-radius:12px}
       chip1:"Paredes de acento", chip2:"Paneles PVC mármol", chip3:"Instalación de TV", chip4:"Pintura", chip5:"Gabinetes de cocina", chip6:"Ensamblaje de muebles",
       t1:"Cotizaciones gratis", t2:"Agenda rápida", t3:"Local: Bradenton y Sarasota", t4:"Acabado limpio y cuidadoso",
       svc_h2:"Nuestros servicios", svc_p:"El trabajo que hacemos cada semana en Bradenton, Sarasota y alrededores. Escoge un servicio y pide tu cotización gratis.",
+      rm_h2:"Regal Matisse — Paneles PVC y Mármol", rm_p:"Nuestro propio showroom de paneles en Sarasota. Regal Matisse vende los paneles PVC y mármol — MOEM HANDY los diseña e instala.", rm_body:"Todas las fotos y videos de abajo son del showroom de Regal Matisse en 1184 Whitfield Ave, Sarasota — los mismos paneles que instalamos en casas de Bradenton, Sarasota y alrededores. Reproduce los videos aquí mismo, toca cualquier foto para verla en Instagram, escoge el diseño que te gusta y pídenos tu cotización de instalación gratis.", rm_ig:"Seguir a @regalmatisse", rm_video:"Video",
       s1_t:"Paredes de Acento y Madera Fina", s1_p:"Paredes de listones de madera y diseños de acento a medida que cambian por completo tu sala o cuarto.", s1_a:"Paneles slat de madera", s1_b:"Paredes para TV", s1_c:"Detalles con luz LED",
       s2_t:"Paneles PVC Tipo Mármol", s2_p:"Instalación de paneles PVC efecto mármol en paredes e islas de cocina — acabado elegante y fácil de limpiar.", s2_a:"Paredes de sala", s2_b:"Islas de cocina", s2_c:"Combinados con paneles slat",
       s3_t:"Instalación de TV", s3_p:"Montaje seguro en pared para TVs de cualquier tamaño, nivelado y centrado. También barras de sonido y consolas.", s3_price:"Desde $120", s3_a:'Cualquier tamaño, incluso 85"–100"', s3_b:"Sobre paredes slat y de acento", s3_c:"Instalación de soundbar",
