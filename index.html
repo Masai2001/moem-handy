@@ -19,14 +19,14 @@
 <style>
   :root{
     --bg:#ffffff; --bg2:#f5f5f5; --surface:#ffffff; --ink:#111111; --ink2:#232323;
-    --muted:#5f5f5f; --line:#e3e3e3; --green:#54fe71; --green-d:#177a28; --green-soft:#e2ffea;
-    --olive-hi:#54fe71; --olive-hi2:#54fe71;
+    --muted:#5f5f5f; --line:#e3e3e3; --green:#2ea444; --green-d:#217631; --green-soft:#e8f4ea;
+    --olive-hi:#2ea444; --olive-hi2:#2ea444;
     --dark:#0a0a0a; --dark2:#141414; --amber:#f2b33d;
     --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.10);
   }
   @media (prefers-color-scheme: dark){
     :root{ --bg:#0a0a0a; --bg2:#121212; --surface:#171717; --ink:#f2f2f2; --ink2:#dddddd;
-      --muted:#9a9a9a; --line:#262626; --green:#54fe71; --green-d:#8aff9f; --green-soft:#0f2a15;
+      --muted:#9a9a9a; --line:#262626; --green:#2ea444; --green-d:#62bb73; --green-soft:#12351a;
       --dark:#050505; --dark2:#101010; --shadow:0 10px 30px rgba(0,0,0,.45); }
   }
   *{box-sizing:border-box}
@@ -69,7 +69,7 @@
   .hero-photo{position:relative;min-height:420px}
   .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .hero-photo .tag{position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,.82);color:#fff;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:700;backdrop-filter:blur(4px)}
-  .area-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(84,254,113,.16);border:1px solid rgba(84,254,113,.5);color:var(--olive-hi2);border-radius:999px;padding:7px 14px;font-weight:800;font-size:13px;width:fit-content;margin-bottom:20px}
+  .area-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,164,68,.16);border:1px solid rgba(46,164,68,.5);color:var(--olive-hi2);border-radius:999px;padding:7px 14px;font-weight:800;font-size:13px;width:fit-content;margin-bottom:20px}
   .area-badge i{width:8px;height:8px;border-radius:50%;background:var(--olive-hi);display:inline-block}
   .hero h1{font-size:clamp(34px,4.6vw,56px);font-weight:900;color:#fff}
   .hero h1 .hl{color:var(--olive-hi2)}
@@ -233,19 +233,19 @@
   .field label em{color:#c0392b;font-style:normal}
   .field input,.field select,.field textarea{border:1.5px solid #d5d5d5;border-radius:12px;padding:12px 14px;font-size:16px;background:#fff;color:#111111;width:100%}
   .field textarea{min-height:96px;resize:vertical}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(23,122,40,.35);border-color:#177a28}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(33,118,49,.35);border-color:#217631}
   .field .err{display:none;color:#c0392b;font-size:13px;font-weight:700}
   .field.invalid input,.field.invalid select{border-color:#c0392b}
   .field.invalid .err{display:block}
   .pref{display:flex;gap:8px;flex-wrap:wrap}
   .pref label{border:1.5px solid #d5d5d5;border-radius:999px;padding:9px 15px;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;min-height:40px}
-  .pref input{accent-color:#177a28;width:17px;height:17px;min-height:0}
-  .pref label:has(input:checked){border-color:#177a28;background:#e2ffea}
+  .pref input{accent-color:#217631;width:17px;height:17px;min-height:0}
+  .pref label:has(input:checked){border-color:#217631;background:#e8f4ea}
   form .submit{width:100%;margin-top:18px;font-size:17px;padding:15px}
   .form-note{font-size:13px;color:#5f5f5f;text-align:center;margin:12px 0 0}
-  .success{display:none;background:#e2ffea;border:1.5px solid #177a28;border-radius:14px;padding:18px;margin-top:18px}
+  .success{display:none;background:#e8f4ea;border:1.5px solid #217631;border-radius:14px;padding:18px;margin-top:18px}
   .success.show{display:block}
-  .success h4{margin:0 0 6px;font-family:"Archivo";font-size:17px;color:#177a28}
+  .success h4{margin:0 0 6px;font-family:"Archivo";font-size:17px;color:#217631}
   .success p{margin:0 0 14px;font-size:14.5px;color:#1e3a24;white-space:pre-line}
   .success .row{display:flex;gap:10px;flex-wrap:wrap}
   .success .row a{flex:1;min-width:180px}
@@ -711,7 +711,7 @@ input,select,textarea{border-radius:12px}
 
         <article class="svc">
           <div class="noimg" aria-hidden="true">
-            <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="13" height="6" rx="1.5" stroke="#a9bd5c" stroke-width="2"/><path d="M16 6h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-7v3" stroke="#a9bd5c" stroke-width="2"/><rect x="10.5" y="15" width="3" height="6" rx="1" fill="#a9bd5c"/></svg>
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="13" height="6" rx="1.5" stroke="#2ea444" stroke-width="2"/><path d="M16 6h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-7v3" stroke="#2ea444" stroke-width="2"/><rect x="10.5" y="15" width="3" height="6" rx="1" fill="#2ea444"/></svg>
             <strong data-i18n="s4_t">Painting &amp; Kitchen Cabinets</strong>
             <span data-i18n="s4_note">Fresh color for walls and cabinets</span>
           </div>
@@ -978,19 +978,19 @@ input,select,textarea{border-radius:12px}
         <p class="sub" data-i18n="q_p">Tell us about your project. We reply with your free estimate — no obligation, no pressure.</p>
         <div class="contact-lines">
           <a href="tel:+19417188730">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#a9bd5c"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="#2ea444"/></svg>
             <span>(941) 718-8730<small data-i18n="q_call">Call</small></span>
           </a>
           <a href="sms:+19417188730">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#a9bd5c"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#2ea444"/></svg>
             <span>(941) 718-8730<small data-i18n="q_text">Text</small></span>
           </a>
           <a href="mailto:moemhandy@gmail.com">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#a9bd5c" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#a9bd5c" stroke-width="2"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#2ea444" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#2ea444" stroke-width="2"/></svg>
             <span>moemhandy@gmail.com<small data-i18n="q_email">Email us anytime</small></span>
           </a>
           <a href="https://www.instagram.com/moem.handy" target="_blank" rel="noopener">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#a9bd5c" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#a9bd5c" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="#a9bd5c"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#2ea444" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#2ea444" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="#2ea444"/></svg>
             <span>@moem.handy<small data-i18n="q_ig">See more work on Instagram</small></span>
           </a>
         </div>
